@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <configSections>
+    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+  </configSections>
+
+  <appSettings>
+    <add key="DebugMode" value="true" />
+  </appSettings>
+
+  <connectionStrings>
+    <add name="DefaultConnection" connectionString="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-CriterionMedDoctor_Admin-20150414103243.mdf;Initial Catalog=aspnet-CriterionMedDoctor_Admin-20150414103243;Integrated Security=True" providerName="System.Data.SqlClient"/>
+    <!-- LOCAL DEV -->
+    <add name="CriterionMed_NetConnectionString" connectionString="Data Source=ARCHTOP5\SQLEXPRESS;Initial Catalog=CriterionMed_Net;User ID=sa;Password=Password1!" providerName="System.Data.SqlClient"/>
+
+    <!-- LIVE -->
+    <!--<add name="CriterionMed_NetConnectionString" connectionString="Data Source=tcp:npj4lzk1gs.database.windows.net,1433;Initial Catalog=criterionmeddoctor_db;User ID=CriterionMed@npj4lzk1gs;Password=Criterion123!" providerName="System.Data.SqlClient"/>-->
+
+  </connectionStrings>
+
+    <system.web>
+    <customErrors mode="Off"/>
+    <authentication mode="None"/>
+    <compilation targetFramework="4.5" debug="true">
+      <assemblies>
+        <add assembly="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+        <add assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="System.Speech, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35"/>
+      </assemblies>
+    </compilation>
+    <httpRuntime targetFramework="4.5"/>
+    <pages>
+      <namespaces>
+        <add namespace="System.Web.Optimization"/>
+        <add namespace="Microsoft.AspNet.Identity"/>
+      </namespaces>
+      <controls>
+        <add assembly="Microsoft.AspNet.Web.Optimization.WebForms" namespace="Microsoft.AspNet.Web.Optimization.WebForms" tagPrefix="webopt"/>
+      </controls>
+    </pages>
+    <httpHandlers>
+      <add path="Telerik.Web.UI.SpellCheckHandler.axd" type="Telerik.Web.UI.SpellCheckHandler" verb="*" validate="false"/>
+      <add path="Telerik.Web.UI.DialogHandler.aspx" type="Telerik.Web.UI.DialogHandler" verb="*" validate="false"/>
+      <add path="Telerik.Web.UI.WebResource.axd" type="Telerik.Web.UI.WebResource" verb="*" validate="false"/>
+    </httpHandlers>
+    <membership>
+      <providers>
+        <!--
+        ASP.NET Membership is disabled in this template. Please visit the following link http://go.microsoft.com/fwlink/?LinkId=301889 to learn about the ASP.NET Membership support in this template
+        -->
+        <clear/>
+      </providers>
+    </membership>
+    <profile>
+      <providers>
+        <!--
+        ASP.NET Membership Profile is disabled in this template. Please visit the following link http://go.microsoft.com/fwlink/?LinkId=301889 to learn about the ASP.NET Membership support in this template
+        -->
+        <clear/>
+      </providers>
+    </profile>
+    <roleManager>
+      <!--
+          ASP.NET Membership Role is disabled in this template. Please visit the following link http://go.microsoft.com/fwlink/?LinkId=301889 to learn about the ASP.NET Membership support in this template
+        -->
+      <providers>
+        <clear/>
+      </providers>
+    </roleManager>
+    <!--
+            If you are deploying to a cloud environment that has multiple web server instances,
+            you should change session state mode from "InProc" to "Custom". In addition,
+            change the connection string named "DefaultConnection" to connect to an instance
+            of SQL Server (including SQL Azure and SQL  Compact) instead of to SQL Server Express.
+      -->
+    <sessionState mode="InProc" customProvider="DefaultSessionProvider">
+      <providers>
+        <add name="DefaultSessionProvider" type="System.Web.Providers.DefaultSessionStateProvider, System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" connectionStringName="DefaultConnection"/>
+      </providers>
+    </sessionState>
+    <httpModules>
+      <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Extensibility.Web.RequestTracking.WebRequestTrackingModule, Microsoft.ApplicationInsights.Extensibility.Web"/>
+    </httpModules>
+  </system.web>
+  <system.webServer>
+
+    <!--will not run local dev -->
+
+    <!--<staticContent>
+      <mimeMap fileExtension=".mp4" mimeType="video/mp4"/>
+      <mimeMap fileExtension=".m4v" mimeType="video/m4v"/>
+    </staticContent>-->
+
+    <modules>
+      <remove name="FormsAuthentication"/>
+      <remove name="ApplicationInsightsWebTracking"/>
+      <add name="ApplicationInsightsWebTracking" type="Microsoft.ApplicationInsights.Extensibility.Web.RequestTracking.WebRequestTrackingModule, Microsoft.ApplicationInsights.Extensibility.Web" preCondition="managedHandler"/>
+    </modules>
+    <handlers>
+      <add name="Telerik_Web_UI_DialogHandler_aspx" verb="*" preCondition="integratedMode" path="Telerik.Web.UI.DialogHandler.aspx" type="Telerik.Web.UI.DialogHandler"/>
+      <add name="Telerik_Web_UI_SpellCheckHandler_axd" verb="*" preCondition="integratedMode" path="Telerik.Web.UI.SpellCheckHandler.axd" type="Telerik.Web.UI.SpellCheckHandler"/>
+      <add name="Telerik_Web_UI_WebResource_axd" verb="*" preCondition="integratedMode" path="Telerik.Web.UI.WebResource.axd" type="Telerik.Web.UI.WebResource"/>
+    </handlers>
+    <validation validateIntegratedModeConfiguration="false"/>
+    <defaultDocument>
+      <files>
+        <clear/>
+        <add value="Home.aspx"/>
+      </files>
+    </defaultDocument>
+  </system.webServer>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" culture="neutral" publicKeyToken="30ad4fe6b2a6aeed"/>
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" culture="neutral" publicKeyToken="31bf3856ad364e35"/>
+        <bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="EntityFramework" publicKeyToken="b77a5c561934e089"/>
+        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin" culture="neutral" publicKeyToken="31bf3856ad364e35"/>
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin.Security.OAuth" culture="neutral" publicKeyToken="31bf3856ad364e35"/>
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin.Security.Cookies" culture="neutral" publicKeyToken="31bf3856ad364e35"/>
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0"/>
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.Owin.Security" culture="neutral" publicKeyToken="31bf3856ad364e35"/>
+        <bindingRedirect oldVersion="0.0.0.0-3.0.0.0" newVersion="3.0.0.0"/>
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.SqlConnectionFactory, EntityFramework"/>
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer"/>
+    </providers>
+  </entityFramework>
+</configuration>

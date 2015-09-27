@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CriterionMed_Net" Class="MyDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ARCHTOP5\SQLEXPRESS;Initial Catalog=CriterionMed_Net;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CriterionMed_NetConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EmailSettings" Member="EmailSettings">
+    <Type Name="EmailSetting">
+      <Column Name="EmailSettingId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MailFromDisplay" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SMTP" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SMTP_Port" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnableSSL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users_Doctors" Member="Users_Doctors">
+    <Type Name="Users_Doctor">
+      <Column Name="DoctorId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AccountName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DoctorName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NPINumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FaxNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UnitRegister" Member="UnitRegisters">
+    <Type Name="UnitRegister">
+      <Column Name="UnitRegisterId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SerialNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogFile" Member="LogFiles">
+    <Type Name="LogFile">
+      <Column Name="LogId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="[Log]" Member="Log" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewletterList" Member="NewletterLists">
+    <Type Name="NewletterList">
+      <Column Name="NewletterListId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IPAddress" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmailAddressOptOut" Member="EmailAddressOptOuts">
+    <Type Name="EmailAddressOptOut">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Removed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

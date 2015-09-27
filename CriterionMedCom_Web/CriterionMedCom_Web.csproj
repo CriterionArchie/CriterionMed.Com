@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4FA3889-9D81-4F8B-8618-D957DF6D437D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CriterionMedCom_Web</RootNamespace>
+    <AssemblyName>CriterionMedCom_Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <NuGetPackageImportStamp>bb4e8ac1</NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/7bc26c13-adb7-4074-a966-f7a45dd6b8fe/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/CriterionMedCom_Web</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.0.14.0-build20632\lib\net40\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.PerfCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerformanceCollector.0.14.0-build20632\lib\net40\Microsoft.ApplicationInsights.Extensibility.PerfCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.RuntimeTelemetry.0.14.0-build20632\lib\net45\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.0.14.0-build20632\lib\net45\Microsoft.ApplicationInsights.Extensibility.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Diagnostics.Instrumentation.Extensions.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.14.0-build08008\lib\net40\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">
+      <HintPath>..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\lib\net45\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2014.1.403.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="apple-touch-icon.png" />
+    <Content Include="assets\css\iFrame.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\stylesheet.css" />
+    <Content Include="assets\fonts\Gotham-Book-webfont.svg" />
+    <Content Include="assets\fonts\GothamBook-Italic-webfont.svg" />
+    <Content Include="assets\fonts\GothamCondensed-Book-webfont.svg" />
+    <Content Include="assets\fonts\stylesheet.css" />
+    <Content Include="assets\images\admins.png" />
+    <Content Include="assets\images\sliderimage1.jpg" />
+    <Content Include="assets\images\sliderimage2.jpg" />
+    <Content Include="assets\images\sliderimage3.jpg" />
+    <Content Include="assets\images\talktonurses.png" />
+    <Content Include="assets\images\team5.jpg" />
+    <Content Include="assets\images\blog-banner.jpg" />
+    <Content Include="assets\images\blog-single-banner.jpg" />
+    <Content Include="assets\images\company-gallery1.jpg" />
+    <Content Include="assets\images\fb.png" />
+    <Content Include="assets\images\feature-bg.jpg" />
+    <Content Include="assets\images\feature1.png" />
+    <Content Include="assets\images\feature2.png" />
+    <Content Include="assets\images\feature3.png" />
+    <Content Include="assets\images\frame.jpg" />
+    <Content Include="assets\images\g.png" />
+    <Content Include="assets\images\healthcare-img1.jpg" />
+    <Content Include="assets\images\help-img.jpg" />
+    <Content Include="assets\images\img1.jpg" />
+    <Content Include="assets\images\img10.jpg" />
+    <Content Include="assets\images\img11.jpg" />
+    <Content Include="assets\images\img2.jpg" />
+    <Content Include="assets\images\img3.jpg" />
+    <Content Include="assets\images\img4.jpg" />
+    <Content Include="assets\images\img5.jpg" />
+    <Content Include="assets\images\img6.jpg" />
+    <Content Include="assets\images\img7.jpg" />
+    <Content Include="assets\images\img8.jpg" />
+    <Content Include="assets\images\img9.jpg" />
+    <Content Include="assets\images\itens.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\main-product-banner.jpg" />
+    <Content Include="assets\images\map.jpg" />
+    <Content Include="assets\images\mono-doc.png" />
+    <Content Include="assets\images\mono-trust.png" />
+    <Content Include="assets\images\nms-banner.jpg" />
+    <Content Include="assets\images\partner1.jpg" />
+    <Content Include="assets\images\partner10.jpg" />
+    <Content Include="assets\images\partner11.jpg" />
+    <Content Include="assets\images\partner12.jpg" />
+    <Content Include="assets\images\partner2.jpg" />
+    <Content Include="assets\images\partner3.jpg" />
+    <Content Include="assets\images\partner4.jpg" />
+    <Content Include="assets\images\partner5.jpg" />
+    <Content Include="assets\images\partner6.jpg" />
+    <Content Include="assets\images\partner7.jpg" />
+    <Content Include="assets\images\partner8.jpg" />
+    <Content Include="assets\images\partner9.jpg" />
+    <Content Include="assets\images\patient-img1.jpg" />
+    <Content Include="assets\images\Patient.png" />
+    <Content Include="assets\images\pdf.png" />
+    <Content Include="assets\images\post-lg.jpg" />
+    <Content Include="assets\images\post1.jpg" />
+    <Content Include="assets\images\post2.jpg" />
+    <Content Include="assets\images\product1.jpg" />
+    <Content Include="assets\images\recomended1.jpg" />
+    <Content Include="assets\images\recomended2.jpg" />
+    <Content Include="assets\images\recomended3.jpg" />
+    <Content Include="assets\images\share-bg.png" />
+    <Content Include="assets\images\share-this-s.jpg" />
+    <Content Include="assets\images\share-this.jpg" />
+    <Content Include="assets\images\simg1.jpg" />
+    <Content Include="assets\images\simg2.jpg" />
+    <Content Include="assets\images\simg3.jpg" />
+    <Content Include="assets\images\simg4.jpg" />
+    <Content Include="assets\images\zz-sliderimage1.jpg" />
+    <Content Include="assets\images\zz_sliderimage2.jpg" />
+    <Content Include="assets\images\zz_sliderimage3.jpg" />
+    <Content Include="assets\images\story-bg.jpg" />
+    <Content Include="assets\images\story1.jpg" />
+    <Content Include="assets\images\subscribe.jpg" />
+    <Content Include="assets\images\team1.jpg" />
+    <Content Include="assets\images\team2.jpg" />
+    <Content Include="assets\images\team3.jpg" />
+    <Content Include="assets\images\team4.jpg" />
+    <Content Include="assets\images\testimonial1.png" />
+    <Content Include="assets\images\testimonial2.png" />
+    <Content Include="assets\images\tw.png" />
+    <Content Include="assets\images\us-flag.jpg" />
+    <Content Include="assets\images\video-full.jpg" />
+    <Content Include="assets\images\video-full2.jpg" />
+    <Content Include="assets\images\video.jpg" />
+    <Content Include="assets\images\video2.jpg" />
+    <Content Include="assets\images\video3.jpg" />
+    <Content Include="assets\images\video4.jpg" />
+    <Content Include="assets\images\video5.jpg" />
+    <Content Include="assets\images\video6.jpg" />
+    <Content Include="assets\images\video7.jpg" />
+    <Content Include="assets\js\canvasjs.min.js" />
+    <Content Include="assets\js\googleTranslator.js" />
+    <Content Include="assets\js\jquery.bxslider.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\min\main.min.js" />
+    <Content Include="assets\js\plugins.js" />
+    <Content Include="assets\js\vendor\jquery-1.11.2.min.js" />
+    <Content Include="assets\js\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="Blog2.aspx" />
+    <Content Include="Blog1.aspx" />
+    <Content Include="EmailOptOutThankYou.aspx" />
+    <Content Include="EmailTemplates\20150821\images\banner-img.jpg" />
+    <Content Include="EmailTemplates\20150821\images\btn1.png" />
+    <Content Include="EmailTemplates\20150821\images\btn2.png" />
+    <Content Include="EmailTemplates\20150821\images\CM-Email_15.jpg" />
+    <Content Include="EmailTemplates\20150821\images\fb.png" />
+    <Content Include="EmailTemplates\20150821\images\img1.jpg" />
+    <Content Include="EmailTemplates\20150821\images\linkedin.png" />
+    <Content Include="EmailTemplates\20150821\images\logo.png" />
+    <Content Include="EmailTemplates\20150821\images\tw.png" />
+    <Content Include="EmailTemplates\20150821\index.html" />
+    <Content Include="TensCodeProcedures.aspx" />
+    <Content Include="DoctorPortalSupport.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Includes\menuactive.js" />
+    <Content Include="Includes\menusubactive.js" />
+    <Content Include="DocsProgram.aspx" />
+    <Content Include="EmailOptOut.aspx" />
+    <Content Include="TensVsNms.aspx" />
+    <Content Include="tile-wide.png" />
+    <Content Include="tile.png" />
+    <Content Include="Top10Blogs.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="ZContact.aspx" />
+    <Content Include="DoctorSettings.aspx" />
+    <Content Include="Includes\addthis.js" />
+    <Content Include="Includes\chataccounts.js" />
+    <Content Include="Includes\chatsales.js" />
+    <Content Include="Includes\HeaderDoctorLogin.ascx" />
+    <Content Include="Includes\MenuDoctorLogin.ascx" />
+    <Content Include="Includes\SubMenuDoctorLogin.ascx" />
+    <Content Include="LearnMore.aspx" />
+    <Content Include="LeaveUsFeedback.aspx" />
+    <Content Include="PainReliefStories.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Security.aspx" />
+    <Content Include="PatientPortal.aspx" />
+    <Content Include="LatestBlogs.aspx" />
+    <Content Include="Company.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="DoctorPortal.aspx" />
+    <Content Include="DocusignOnlineScripts.aspx" />
+    <Content Include="HealthcareCaseStudies.aspx" />
+    <Content Include="HealthcareProfessionals.aspx" />
+    <Content Include="LoginPatientPortal.aspx" />
+    <Content Include="MedicalInsurancers.aspx" />
+    <Content Include="PatientCare.aspx" />
+    <Content Include="PatientFaq.aspx" />
+    <Content Include="PatientInformation.aspx" />
+    <Content Include="PatientResults.aspx" />
+    <Content Include="Legal.aspx" />
+    <Content Include="Privacy.aspx" />
+    <Content Include="ProductCaseStudies.aspx" />
+    <Content Include="HealthcareElectrotherapy.aspx" />
+    <Content Include="ProductElectrotherapy.aspx" />
+    <Content Include="Includes\Footer.ascx" />
+    <Content Include="Includes\googleanalytics.js" />
+    <Content Include="Includes\Head.ascx" />
+    <Content Include="Includes\Header.ascx" />
+    <Content Include="Includes\Menu.ascx" />
+    <Content Include="Includes\Newsletter.ascx" />
+    <Content Include="Includes\SubMenuForPatients.ascx" />
+    <Content Include="Includes\SubMenuBlog.ascx" />
+    <Content Include="Includes\SubMenuProducts.ascx" />
+    <Content Include="Includes\SubMenuAboutUs.ascx" />
+    <Content Include="Includes\SubMenuHealthcare.ascx" />
+    <Content Include="Home.aspx" />
+    <Content Include="InvestorRelations.aspx" />
+    <Content Include="LoginDoctorPortal.aspx" />
+    <Content Include="Mission.aspx" />
+    <Content Include="Newsroom.aspx" />
+    <Content Include="OurStory.aspx" />
+    <Content Include="PainManagement.aspx" />
+    <Content Include="PartnerWithCriterionMed.aspx" />
+    <Content Include="ProductNMS.aspx" />
+    <Content Include="Products.aspx" />
+    <Content Include="Rehabilitation.aspx" />
+    <Content Include="Reimbursement.aspx" />
+    <Content Include="SubmitBlogIdeas.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="assets\fonts\Gotham-Book-webfont.eot" />
+    <Content Include="assets\fonts\Gotham-Book-webfont.ttf" />
+    <Content Include="assets\fonts\Gotham-Book-webfont.woff" />
+    <Content Include="assets\fonts\Gotham-Book-webfont.woff2" />
+    <Content Include="assets\fonts\GothamBook-Italic-webfont.eot" />
+    <Content Include="assets\fonts\GothamBook-Italic-webfont.ttf" />
+    <Content Include="assets\fonts\GothamBook-Italic-webfont.woff" />
+    <Content Include="assets\fonts\GothamBook-Italic-webfont.woff2" />
+    <Content Include="assets\fonts\GothamCondensed-Book-webfont.eot" />
+    <Content Include="assets\fonts\GothamCondensed-Book-webfont.ttf" />
+    <Content Include="assets\fonts\GothamCondensed-Book-webfont.woff" />
+    <Content Include="assets\fonts\GothamCondensed-Book-webfont.woff2" />
+    <Content Include="config.rb" />
+    <Content Include="MyDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MyDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Test.aspx" />
+    <Content Include="assets\files\NMES_Codes.pdf" />
+    <Content Include="assets\files\TENS_Codes.pdf" />
+    <Content Include="assets\files\RSA1V2A.pdf" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Blog1.aspx.cs">
+      <DependentUpon>Blog1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog1.aspx.designer.cs">
+      <DependentUpon>Blog1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog2.aspx.cs">
+      <DependentUpon>Blog2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog2.aspx.designer.cs">
+      <DependentUpon>Blog2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ClassFunctions.cs" />
+    <Compile Include="Classes\GlobalVar.cs" />
+    <Compile Include="EmailOptOutThankYou.aspx.cs">
+      <DependentUpon>EmailOptOutThankYou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmailOptOutThankYou.aspx.designer.cs">
+      <DependentUpon>EmailOptOutThankYou.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TensCodeProcedures.aspx.cs">
+      <DependentUpon>TensCodeProcedures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TensCodeProcedures.aspx.designer.cs">
+      <DependentUpon>TensCodeProcedures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorPortalSupport.aspx.cs">
+      <DependentUpon>DoctorPortalSupport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorPortalSupport.aspx.designer.cs">
+      <DependentUpon>DoctorPortalSupport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocsProgram.aspx.cs">
+      <DependentUpon>DocsProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocsProgram.aspx.designer.cs">
+      <DependentUpon>DocsProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmailOptOut.aspx.cs">
+      <DependentUpon>EmailOptOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmailOptOut.aspx.designer.cs">
+      <DependentUpon>EmailOptOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TensVsNms.aspx.cs">
+      <DependentUpon>TensVsNms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TensVsNms.aspx.designer.cs">
+      <DependentUpon>TensVsNms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ZContact.aspx.cs">
+      <DependentUpon>ZContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ZContact.aspx.designer.cs">
+      <DependentUpon>ZContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorSettings.aspx.cs">
+      <DependentUpon>DoctorSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorSettings.aspx.designer.cs">
+      <DependentUpon>DoctorSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\HeaderDoctorLogin.ascx.cs">
+      <DependentUpon>HeaderDoctorLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\HeaderDoctorLogin.ascx.designer.cs">
+      <DependentUpon>HeaderDoctorLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\MenuDoctorLogin.ascx.cs">
+      <DependentUpon>MenuDoctorLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\MenuDoctorLogin.ascx.designer.cs">
+      <DependentUpon>MenuDoctorLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\SubMenuDoctorLogin.ascx.cs">
+      <DependentUpon>SubMenuDoctorLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\SubMenuDoctorLogin.ascx.designer.cs">
+      <DependentUpon>SubMenuDoctorLogin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LearnMore.aspx.cs">
+      <DependentUpon>LearnMore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LearnMore.aspx.designer.cs">
+      <DependentUpon>LearnMore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LeaveUsFeedback.aspx.cs">
+      <DependentUpon>LeaveUsFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeaveUsFeedback.aspx.designer.cs">
+      <DependentUpon>LeaveUsFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PainReliefStories.aspx.cs">
+      <DependentUpon>PainReliefStories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PainReliefStories.aspx.designer.cs">
+      <DependentUpon>PainReliefStories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Security.aspx.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security.aspx.designer.cs">
+      <DependentUpon>Security.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPortal.aspx.cs">
+      <DependentUpon>PatientPortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientPortal.aspx.designer.cs">
+      <DependentUpon>PatientPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LatestBlogs.aspx.cs">
+      <DependentUpon>LatestBlogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LatestBlogs.aspx.designer.cs">
+      <DependentUpon>LatestBlogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company.aspx.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company.aspx.designer.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorPortal.aspx.cs">
+      <DependentUpon>DoctorPortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoctorPortal.aspx.designer.cs">
+      <DependentUpon>DoctorPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DocusignOnlineScripts.aspx.cs">
+      <DependentUpon>DocusignOnlineScripts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocusignOnlineScripts.aspx.designer.cs">
+      <DependentUpon>DocusignOnlineScripts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HealthcareCaseStudies.aspx.cs">
+      <DependentUpon>HealthcareCaseStudies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HealthcareCaseStudies.aspx.designer.cs">
+      <DependentUpon>HealthcareCaseStudies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HealthcareProfessionals.aspx.cs">
+      <DependentUpon>HealthcareProfessionals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HealthcareProfessionals.aspx.designer.cs">
+      <DependentUpon>HealthcareProfessionals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPatientPortal.aspx.cs">
+      <DependentUpon>LoginPatientPortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPatientPortal.aspx.designer.cs">
+      <DependentUpon>LoginPatientPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalInsurancers.aspx.cs">
+      <DependentUpon>MedicalInsurancers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MedicalInsurancers.aspx.designer.cs">
+      <DependentUpon>MedicalInsurancers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientCare.aspx.cs">
+      <DependentUpon>PatientCare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientCare.aspx.designer.cs">
+      <DependentUpon>PatientCare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientFaq.aspx.cs">
+      <DependentUpon>PatientFaq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientFaq.aspx.designer.cs">
+      <DependentUpon>PatientFaq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientInformation.aspx.cs">
+      <DependentUpon>PatientInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientInformation.aspx.designer.cs">
+      <DependentUpon>PatientInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PatientResults.aspx.cs">
+      <DependentUpon>PatientResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PatientResults.aspx.designer.cs">
+      <DependentUpon>PatientResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Legal.aspx.cs">
+      <DependentUpon>Legal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Legal.aspx.designer.cs">
+      <DependentUpon>Legal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privacy.aspx.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privacy.aspx.designer.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCaseStudies.aspx.cs">
+      <DependentUpon>ProductCaseStudies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductCaseStudies.aspx.designer.cs">
+      <DependentUpon>ProductCaseStudies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HealthcareElectrotherapy.aspx.cs">
+      <DependentUpon>HealthcareElectrotherapy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HealthcareElectrotherapy.aspx.designer.cs">
+      <DependentUpon>HealthcareElectrotherapy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductElectrotherapy.aspx.cs">
+      <DependentUpon>ProductElectrotherapy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductElectrotherapy.aspx.designer.cs">
+      <DependentUpon>ProductElectrotherapy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\Head.ascx.cs">
+      <DependentUpon>Head.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\Head.ascx.designer.cs">
+      <DependentUpon>Head.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\Newsletter.ascx.cs">
+      <DependentUpon>Newsletter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\Newsletter.ascx.designer.cs">
+      <DependentUpon>Newsletter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\SubMenuForPatients.ascx.cs">
+      <DependentUpon>SubMenuForPatients.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\SubMenuForPatients.ascx.designer.cs">
+      <DependentUpon>SubMenuForPatients.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\SubMenuBlog.ascx.cs">
+      <DependentUpon>SubMenuBlog.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\SubMenuBlog.ascx.designer.cs">
+      <DependentUpon>SubMenuBlog.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\SubMenuProducts.ascx.cs">
+      <DependentUpon>SubMenuProducts.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\SubMenuProducts.ascx.designer.cs">
+      <DependentUpon>SubMenuProducts.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\SubMenuAboutUs.ascx.cs">
+      <DependentUpon>SubMenuAboutUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\SubMenuAboutUs.ascx.designer.cs">
+      <DependentUpon>SubMenuAboutUs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\SubMenuHealthcare.ascx.cs">
+      <DependentUpon>SubMenuHealthcare.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Includes\SubMenuHealthcare.ascx.designer.cs">
+      <DependentUpon>SubMenuHealthcare.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InvestorRelations.aspx.cs">
+      <DependentUpon>InvestorRelations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvestorRelations.aspx.designer.cs">
+      <DependentUpon>InvestorRelations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDoctorPortal.aspx.cs">
+      <DependentUpon>LoginDoctorPortal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginDoctorPortal.aspx.designer.cs">
+      <DependentUpon>LoginDoctorPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mission.aspx.cs">
+      <DependentUpon>Mission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mission.aspx.designer.cs">
+      <DependentUpon>Mission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="MyDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Newsroom.aspx.cs">
+      <DependentUpon>Newsroom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Newsroom.aspx.designer.cs">
+      <DependentUpon>Newsroom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OurStory.aspx.cs">
+      <DependentUpon>OurStory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OurStory.aspx.designer.cs">
+      <DependentUpon>OurStory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PainManagement.aspx.cs">
+      <DependentUpon>PainManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PainManagement.aspx.designer.cs">
+      <DependentUpon>PainManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PartnerWithCriterionMed.aspx.cs">
+      <DependentUpon>PartnerWithCriterionMed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PartnerWithCriterionMed.aspx.designer.cs">
+      <DependentUpon>PartnerWithCriterionMed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductNMS.aspx.cs">
+      <DependentUpon>ProductNMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductNMS.aspx.designer.cs">
+      <DependentUpon>ProductNMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products.aspx.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products.aspx.designer.cs">
+      <DependentUpon>Products.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rehabilitation.aspx.cs">
+      <DependentUpon>Rehabilitation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rehabilitation.aspx.designer.cs">
+      <DependentUpon>Rehabilitation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reimbursement.aspx.cs">
+      <DependentUpon>Reimbursement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reimbursement.aspx.designer.cs">
+      <DependentUpon>Reimbursement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="SubmitBlogIdeas.aspx.cs">
+      <DependentUpon>SubmitBlogIdeas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubmitBlogIdeas.aspx.designer.cs">
+      <DependentUpon>SubmitBlogIdeas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Top10Blogs.aspx.cs">
+      <DependentUpon>Top10Blogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Top10Blogs.aspx.designer.cs">
+      <DependentUpon>Top10Blogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\videos\" />
+    <Folder Include="_Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bundle.config" />
+    <Content Include="assets\files\ITens_Manual.pdf" />
+    <Content Include="assets\files\TENSvsNMS.pdf" />
+    <Content Include="assets\files\TENSCodingProceduresICD10.pdf" />
+    <Content Include="EmailTemplates\20150821\images\.DS_Store" />
+    <Content Include="assets\files\NMS_Manual.pdf" />
+    <None Include="MyDataClasses.dbml.layout">
+      <DependentUpon>MyDataClasses.dbml</DependentUpon>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61814</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61814/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets" Condition="Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.16-beta\build\portable-net45+win8+wpa81\Microsoft.Diagnostics.Tracing.EventSource.Redist.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.14.0-build08008\build\Microsoft.ApplicationInsights.Agent.Intercept.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.14.0-build08008\build\Microsoft.ApplicationInsights.Agent.Intercept.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.0.14.0-build20632\tools\net40\Microsoft.ApplicationInsights.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.0.14.0-build20632\tools\net40\Microsoft.ApplicationInsights.targets')" />
+  <Target Name="EnsureApplicationInsightsImported" BeforeTargets="BeforeBuild" Condition="'$(ApplicationInsightsImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.0.14.0-build20632\tools\net40\Microsoft.ApplicationInsights.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." />
+    <Error Condition="Exists('..\packages\Microsoft.ApplicationInsights.0.14.0-build20632\tools\net40\Microsoft.ApplicationInsights.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." />
+  </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.14.0-build08008\build\Microsoft.ApplicationInsights.Agent.Intercept.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.14.0-build08008\build\Microsoft.ApplicationInsights.Agent.Intercept.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
