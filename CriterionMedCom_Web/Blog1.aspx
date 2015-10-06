@@ -6,7 +6,7 @@
 <%@ Register Src="~/Includes/Menu.ascx" TagPrefix="uc1" TagName="Menu" %>
 <%@ Register Src="~/Includes/Header.ascx" TagPrefix="uc1" TagName="Header" %>
 <%@ Register Src="~/Includes/SubMenuBlog.ascx" TagPrefix="uc1" TagName="SubMenuBlog" %>
-
+<? phpinfo(); exit; ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
